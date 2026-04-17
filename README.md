@@ -26,6 +26,34 @@ Set `OPENAI_API_KEY` in your shell, then run:
 docker compose up --build
 ```
 
+## Deploy To Render
+
+This repo includes [render.yaml](/c:/dev/python/AgenticAvail/render.yaml) for a two-service Render setup:
+
+- `agenticavail-backend`: FastAPI web service
+- `agenticavail-frontend`: Vite/React static site
+
+Backend env vars to set in Render:
+
+- `OPENAI_API_KEY`: required
+- `OPENAI_MODEL`: optional, defaults to `gpt-4.1`
+- `CORS_ALLOWED_ORIGINS`: required for separate frontend/backend deploys
+  Example: `https://your-frontend-name.onrender.com`
+
+Frontend env vars to set in Render:
+
+- `VITE_API_BASE_URL`: required
+  Example: `https://your-backend-name.onrender.com`
+
+Recommended Render flow:
+
+1. Push this repo to GitHub.
+2. In Render, create a new Blueprint from the repo.
+3. Set the required environment variables when prompted.
+4. After the backend is created, copy its public URL into the frontend `VITE_API_BASE_URL`.
+5. Set the backend `CORS_ALLOWED_ORIGINS` to the frontend public URL.
+6. Redeploy both services.
+
 ## Backend endpoints
 
 - `GET /health`
