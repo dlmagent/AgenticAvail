@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -12,11 +14,21 @@ from services.property_resolver import ResolveRequest, ResolveResponse, resolve_
 from services.results_explainer import ExplainRequest, ExplainResponse, explain_results
 
 
+def _cors_allowed_origins() -> list[str]:
+    raw = (os.getenv("CORS_ALLOWED_ORIGINS") or "").strip()
+    if not raw:
+        return ["*"]
+    return [origin.strip() for origin in raw.split(",") if origin.strip()]
+
+
+allowed_origins = _cors_allowed_origins()
+
+
 app = FastAPI(title="Unified Hotel Demo Backend", version="1.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_credentials=allowed_origins != ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
