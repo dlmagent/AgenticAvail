@@ -71,6 +71,21 @@ Direct embedded-service routes are also available:
 - `POST /agents/resolve`
 - `POST /agents/explain`
 
+## MCP Facade
+
+The backend also exposes a separate MCP-compatible facade at:
+
+- `/mcp`
+
+This is additive and does not replace the existing demo routes. It is intended for external MCP clients while the React demo continues to use `/chat/react` and the other HTTP endpoints.
+
+Optional MCP auth:
+
+- Set `MCP_AUTH_TOKEN` on the backend
+- Send `Authorization: Bearer <token>` on MCP requests
+
+The health response includes MCP status metadata so you can verify whether the facade is enabled.
+
 ## Notes
 
 - The MCP contract is preserved, but capability routing is now in-process instead of hop-by-hop HTTP between separate containers.

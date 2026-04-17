@@ -1,4 +1,68 @@
-INFO:     Started server process [14888]
+INFO:     Started server process [25036]
 INFO:     Waiting for application startup.
+[04/17/26 13:31:09] INFO     StreamableHTTP      streamable_http_manager.py:110
+                             session manager                                   
+                             started                                           
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+[04/17/26 13:31:23] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:31:24] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:31:26] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:31:27] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:31:47] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+                    INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:31:49] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:31:53] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:31:56] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:33:09] INFO     Terminating session: None   streamable_http.py:630
+[04/17/26 13:36:27] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:36:28] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:36:29] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:36:30] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:36:33] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:36:34] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:37:35] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:37:36] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:37:37] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:37:39] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
+[04/17/26 13:37:40] INFO     HTTP Request: POST                 _client.py:1038
+                             https://api.openai.com/v1/chat/com                
+                             pletions "HTTP/1.1 200 OK"                        
