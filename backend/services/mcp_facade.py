@@ -2,8 +2,10 @@ from typing import Any
 
 try:
     from mcp.server.fastmcp import FastMCP
+    from mcp.types import ToolAnnotations
 except ImportError:  # pragma: no cover - optional dependency guard
     FastMCP = None
+    ToolAnnotations = None
 
 from .availability import SearchRequest, search_hotels
 from .context import UpsertRequest, get_session_state, upsert_session
@@ -17,6 +19,9 @@ MCP_FACADE_IMPORT_ERROR = None if MCP_FACADE_AVAILABLE else "Install the optiona
 
 
 if MCP_FACADE_AVAILABLE:
+    READ_ONLY = ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True, openWorldHint=False)
+    STATEFUL_WRITE = ToolAnnotations(readOnlyHint=False, destructiveHint=False, idempotentHint=False, openWorldHint=False)
+
     mcp_server = FastMCP(
         "AgenticAvail MCP",
         instructions=(
@@ -28,19 +33,28 @@ if MCP_FACADE_AVAILABLE:
         streamable_http_path="/",
     )
 
-    @mcp_server.tool()
+    @mcp_server.tool(
+        title="Get Session State",
+        annotations=READ_ONLY,
+    )
     def context_get(session_id: str) -> dict[str, Any]:
         """Retrieve the current session state for a session ID."""
         return get_session_state(session_id).model_dump(mode="json")
 
 
-    @mcp_server.tool()
+    @mcp_server.tool(
+        title="Update Session State",
+        annotations=STATEFUL_WRITE,
+    )
     def context_upsert(session_id: str, patch: dict[str, Any]) -> dict[str, Any]:
         """Update session state with a partial patch and return the new state."""
         return upsert_session(UpsertRequest(session_id=session_id, patch=patch)).model_dump(mode="json")
 
 
-    @mcp_server.tool()
+    @mcp_server.tool(
+        title="Extract Search Parameters",
+        annotations=READ_ONLY,
+    )
     def extraction_parse(session_id: str, user_message: str, state: dict[str, Any]) -> dict[str, Any]:
         """Extract hotel-search intent and state updates from a natural-language user message."""
         return extract_patch(
@@ -48,7 +62,10 @@ if MCP_FACADE_AVAILABLE:
         ).model_dump(mode="json")
 
 
-    @mcp_server.tool()
+    @mcp_server.tool(
+        title="Resolve Place Or POI",
+        annotations=READ_ONLY,
+    )
     def property_resolve(query: str, city: str, state=None, radius_miles=None) -> dict[str, Any]:
         """Resolve a place or POI to coordinates and nearby candidate hotels."""
         return resolve_property(
@@ -56,7 +73,10 @@ if MCP_FACADE_AVAILABLE:
         ).model_dump(mode="json")
 
 
-    @mcp_server.tool()
+    @mcp_server.tool(
+        title="Search Hotel Availability",
+        annotations=READ_ONLY,
+    )
     def availability_search(
         city: str,
         check_in: str,
@@ -93,7 +113,10 @@ if MCP_FACADE_AVAILABLE:
         return search_hotels(request).model_dump(mode="json")
 
 
-    @mcp_server.tool()
+    @mcp_server.tool(
+        title="Explain Search Results",
+        annotations=READ_ONLY,
+    )
     def results_explain(session_id: str, user_message: str, state: dict[str, Any], search_response: dict[str, Any]) -> dict[str, Any]:
         """Explain availability-search results in grounded natural language."""
         return explain_results(
