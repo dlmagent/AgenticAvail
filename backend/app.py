@@ -1,13 +1,16 @@
 from __future__ import annotations
 
 import os
+from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from services.availability import SearchRequest, search_hotels
 from services.context import UpsertRequest, get_session_state, upsert_session
 from services.extraction import ExtractRequest, extract_patch
+from services.mcp_facade import MCP_FACADE_AVAILABLE, MCP_FACADE_IMPORT_ERROR, mcp_http_app, mcp_server
 from services.mcp import InvokeRequest, InvokeResponse, list_capabilities, invoke_capability
 from services.orchestrator import ChatRequest, ChatResponse, MODEL, chat, chat_react
 from services.property_resolver import ResolveRequest, ResolveResponse, resolve_property
@@ -22,21 +25,56 @@ def _cors_allowed_origins() -> list[str]:
 
 
 allowed_origins = _cors_allowed_origins()
+mcp_auth_token = (os.getenv("MCP_AUTH_TOKEN") or "").strip()
 
 
-app = FastAPI(title="Unified Hotel Demo Backend", version="1.0")
+@asynccontextmanager
+async def app_lifespan(_app: FastAPI):
+    if MCP_FACADE_AVAILABLE and mcp_server is not None:
+        async with mcp_server.session_manager.run():
+            yield
+        return
+    yield
+
+
+app = FastAPI(title="Unified Hotel Demo Backend", version="1.0", lifespan=app_lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
     allow_credentials=allowed_origins != ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["Mcp-Session-Id"],
 )
+
+
+@app.middleware("http")
+async def protect_mcp_facade(request: Request, call_next):
+    if request.url.path.startswith("/mcp") and mcp_auth_token:
+        authorization = request.headers.get("authorization", "")
+        expected = f"Bearer {mcp_auth_token}"
+        if authorization != expected:
+            return JSONResponse(status_code=401, content={"detail": "Unauthorized MCP request"})
+    return await call_next(request)
 
 
 @app.get("/health")
 def health():
-    return {"ok": True, "model": MODEL, "deployment": "unified-backend"}
+    return {
+        "ok": True,
+        "model": MODEL,
+        "deployment": "unified-backend",
+        "mcp_facade": {
+            "enabled": MCP_FACADE_AVAILABLE,
+            "path": "/mcp",
+            "auth_required": bool(mcp_auth_token),
+            "import_error": MCP_FACADE_IMPORT_ERROR,
+        },
+    }
+
+
+if MCP_FACADE_AVAILABLE and mcp_http_app is not None:
+    app.mount("/mcp", mcp_http_app)
 
 
 @app.post("/chat", response_model=ChatResponse)

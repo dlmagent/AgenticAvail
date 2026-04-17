@@ -4,3 +4,4 @@ pydantic==2.8.2
 python-dateutil
 jsonschema
 openai>=1.40.0
+mcp>=1.4.0,<2
