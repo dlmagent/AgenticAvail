@@ -1,0 +1,412 @@
+{
+  "reservationIds": {
+    "confirmationNumbers": [
+      {
+        "externalConfirmationNumber": {
+          "number": "string",
+          "source": "st"
+        },
+        "pmsConfirmationNumber": "string"
+      }
+    ],
+    "unsolicitedCancelId": "5H27016ZDQZ3XWN4L0BKT7YEGWPWK3IYJN2X2ZIJ"
+  },
+  "imageStatus": "COMMITTED",
+  "segments": [
+    {
+      "id": 0,
+      "parentId": 0,
+      "guestId": 0,
+      "synchroNumber": 0,
+      "pmsStatus": "IN_HOUSE",
+      "status": "BOOKED",
+      "actionCode": "NS",
+      "businessRewardsInformation": {
+        "bookerId": 0,
+        "eventName": "string",
+        "bookerEventId": 0,
+        "typeCode": "string",
+        "createBookerReservation": false
+      },
+      "hotelMnemonic": "string",
+      "offer": {
+        "groupContractCode": "string",
+        "externalBookingCode": "string",
+        "productUses": [
+          {
+            "id": 0,
+            "period": {
+              "start": "2026-02-20",
+              "end": "2026-02-20"
+            },
+            "isDayUse": true,
+            "ratePlanCode": "2",
+            "inventoryTypeCode": "string",
+            "upgradedInventoryTypeCode": "string",
+            "quantity": 0,
+            "adults": 0,
+            "children": 0,
+            "guestCount": [
+              {
+                "otaCode": "AQC10",
+                "count": 0
+              }
+            ],
+            "guestIds": [
+              0
+            ],
+            "requestedProductRates": [
+              {
+                "start": "2026-02-20",
+                "end": "2026-02-20",
+                "base": {
+                  "amount": "string",
+                  "overrideIndicator": true
+                }
+              }
+            ]
+          }
+        ],
+        "propertyMarketSegment": "string",
+        "nightlyCorpMarketSegments": [
+          {
+            "start": "2026-02-20",
+            "end": "2026-02-20",
+            "value": "string"
+          }
+        ],
+        "policyTypeCode": "string"
+      },
+      "travelAgencyNumber": "string",
+      "corporateNumber": "R0AQHAVCW8",
+      "payment": {
+        "paymentInformation": {
+          "amount": "string",
+          "paymentSource": {
+            "code": "string",
+            "text": "string"
+          },
+          "paymentStatus": "Payment received",
+          "paymentType": 1,
+          "paymentCard": {
+            "cardCode": "BM",
+            "expireDate": "string",
+            "cardNumber": {
+              "token": "AXYHLa4Ob"
+            },
+            "cardHolderName": "string",
+            "cvvNumber": {
+              "token": "Ee"
+            },
+            "issuanceCountry": "BR",
+            "isCNP": true,
+            "billingAddress": {
+              "type": 1,
+              "addressLines": [
+                "string"
+              ],
+              "cityName": "string",
+              "postalCode": "string",
+              "county": "string",
+              "stateProvince": "string",
+              "countryName": "string",
+              "countryCode": "nH",
+              "companyName": "string",
+              "unstructuredAddress": [
+                "string"
+              ]
+            },
+            "3dsData": [
+              {
+                "authVerificationValue": "12aA8K8mGA2LXBzSzXg6YiMSoYDpWJYvvHWe6LJq",
+                "merchantName": "SS5xz8xt6AUM4BCiOChCZmnyVCq3TLS2py1udWtS",
+                "tavv": "mHT31fDwj6Bjm4Z4lVu8DQrC9lHleIN3JuJGBG5t",
+                "ucaf": "string",
+                "eciFlag": "17OPRKueu2DwF4tPnAyIXXeKntVcjn1YFY4fy9Ki",
+                "dsTransactionId": "ghC3JWBKhm29saDBsNGLOVmaMxDqwVQ6sxcC",
+                "identifierOfAuthorization": "GbdLCD46HM7Lytc8",
+                "threeDSVersion": "t2WlnnWwXU",
+                "xid": "0qJwnhUGlqyH4RvZKBch6JspujSbvbf0vCokufgV",
+                "bookingChannel": "EC",
+                "cardNumberSource": "K",
+                "exemptionUsed": "NA",
+                "agreedMandate": "NA",
+                "authIncomplete": "NA"
+              }
+            ]
+          },
+          "guaranteePaymentId": "6n",
+          "paymentIntent": "Deposit",
+          "informerVendorCode": "strin",
+          "fraudRecordId": "string",
+          "paymentRecordId": "string",
+          "transactionDate": "2018-05-26T22:00:00",
+          "pares": "string",
+          "invoiceId": "string",
+          "xid": "string",
+          "veresCode": "s",
+          "creditCardCompany": "stri",
+          "payer": {
+            "payerId": 0,
+            "payerType": "Guest"
+          }
+        },
+        "depositPayments": [
+          {
+            "id": 0,
+            "amount": "string",
+            "paymentSource": {
+              "code": "string",
+              "text": "string"
+            },
+            "paymentStatus": "Payment received",
+            "paymentType": 1,
+            "paymentCard": {
+              "cardCode": "3G",
+              "expireDate": "string",
+              "cardNumber": {
+                "token": "jTA"
+              },
+              "cardHolderName": "string",
+              "cvvNumber": {
+                "token": "GLTUxQ55LmnM5akxisn"
+              },
+              "issuanceCountry": "BR",
+              "isCNP": true,
+              "billingAddress": {
+                "type": 1,
+                "addressLines": [
+                  "string"
+                ],
+                "cityName": "string",
+                "postalCode": "string",
+                "county": "string",
+                "stateProvince": "string",
+                "countryName": "string",
+                "countryCode": "Uf",
+                "companyName": "string",
+                "unstructuredAddress": [
+                  "string"
+                ]
+              },
+              "3dsData": [
+                {
+                  "authVerificationValue": "VaH8KRI8sKnLUtINSR183AzvOIQjTyyg8ddRySxK",
+                  "merchantName": "LUYDbzmRC2yzpEnT0syK7Wd3rve88mrEA50EJc8n",
+                  "tavv": "mKnZtSNfQR4NNPwbiNeVljZaIl449ARnjIXcQwIT",
+                  "ucaf": "string",
+                  "eciFlag": "CqX3Lbn7DV3jVVSVniIygMmqcB2rFtFuOxTTXJXb",
+                  "dsTransactionId": "TLQ8WkhnRtaUCjAWWH50wWafRSx7mcs0gFuj",
+                  "identifierOfAuthorization": "SMUSwbE5TOVFpTp5",
+                  "threeDSVersion": "YnmnG4BvzK",
+                  "xid": "CAlp7XM78D4S4Y5nEFpS35TYsFalaWdtqiFUnEtk",
+                  "bookingChannel": "EC",
+                  "cardNumberSource": "K",
+                  "exemptionUsed": "NA",
+                  "agreedMandate": "NA",
+                  "authIncomplete": "NA"
+                }
+              ]
+            },
+            "guaranteePaymentId": "SSwnzcAXAaj",
+            "paymentIntent": "Deposit",
+            "informerVendorCode": "strin",
+            "channelSubUser": "string",
+            "fraudRecordId": "string",
+            "paymentRecordId": "string",
+            "transactionDate": "2018-05-26T22:00:00",
+            "pares": "string",
+            "invoiceId": "string",
+            "xid": "string",
+            "veresCode": "s",
+            "creditCardCompany": "stri",
+            "payer": {
+              "payerId": 0,
+              "payerType": "Guest"
+            }
+          }
+        ],
+        "offerCode": "string",
+        "depositId": "string",
+        "guaranteeType": "DAY_OF_ARRIVAL_HOLD",
+        "billingAddress": {
+          "type": 1,
+          "addressLines": [
+            "string"
+          ],
+          "cityName": "string",
+          "postalCode": "string",
+          "county": "string",
+          "stateProvince": "string",
+          "countryName": "string",
+          "countryCode": "ou",
+          "companyName": "string",
+          "unstructuredAddress": [
+            "string"
+          ]
+        },
+        "paymentByPoints": [
+          {
+            "cashAmount": "string",
+            "numberOfPoints": 0
+          }
+        ]
+      },
+      "arrivalTime": "string",
+      "departureTime": "string",
+      "arrivalTransport": {
+        "type": 2,
+        "id": "string",
+        "locationCode": "str",
+        "time": "2026-02-20T20:20:08.220Z",
+        "locationDescription": "string",
+        "terminal": "st",
+        "remoteLocation": "str"
+      },
+      "departureTransport": {
+        "type": 2,
+        "id": "string",
+        "locationCode": "str",
+        "time": "2026-02-20T20:20:08.220Z",
+        "locationDescription": "string",
+        "terminal": "st",
+        "remoteLocation": "str"
+      },
+      "deleteAllSpecialRequests": false,
+      "specialRequests": [
+        {
+          "requestCode": "string",
+          "description": "string",
+          "quantity": 0,
+          "dateTime": "2018-05-26T22:00:00"
+        }
+      ],
+      "serviceRequests": [
+        {
+          "code": "OTHS, AUTO, RATE, MEAL and MEET",
+          "quantity": 0,
+          "description": "string"
+        }
+      ],
+      "communicationPreferences": {
+        "emailAddresses": [
+          "string"
+        ],
+        "sendEmail": true,
+        "faxNumbers": [
+          "string"
+        ],
+        "smsNumbers": [
+          "string"
+        ],
+        "sendSMS": false
+      },
+      "comments": [
+        {
+          "type": "SUPPLEMENTARY_INFORMATION",
+          "language": "mw",
+          "text": [
+            "string"
+          ]
+        }
+      ]
+    }
+  ],
+  "userProfiles": [
+    {
+      "id": 0,
+      "branch": "string",
+      "rank": "string",
+      "personName": {
+        "prefix": "string",
+        "given": "string",
+        "middle": "string",
+        "surname": "string",
+        "suffix": "string",
+        "title": "string"
+      },
+      "matchPersonName": {
+        "prefix": "string",
+        "given": "string",
+        "middle": "string",
+        "surname": "string",
+        "suffix": "string",
+        "title": "string"
+      },
+      "identificationInfo": [
+        {
+          "number": "QFU514563221J",
+          "nationality": "BR",
+          "type": "PASSPORT",
+          "issuanceLocation": "New-York"
+        }
+      ],
+      "addresses": [
+        {
+          "type": 1,
+          "addressLines": [
+            "string"
+          ],
+          "cityName": "string",
+          "postalCode": "string",
+          "county": "string",
+          "stateProvince": "string",
+          "countryName": "string",
+          "countryCode": "fC",
+          "companyName": "string",
+          "unstructuredAddress": [
+            "string"
+          ]
+        }
+      ],
+      "telephones": [
+        {
+          "locationType": 6,
+          "deviceType": 1,
+          "countryCode": "str",
+          "areaCode": "string",
+          "extension": "strin",
+          "number": "string"
+        }
+      ],
+      "emails": [
+        {
+          "type": 1,
+          "language": "zy",
+          "address": "string"
+        }
+      ],
+      "loyaltyProgram": {
+        "loyaltyId": "4jrigklWbDnublD6qN2t5",
+        "programs": [
+          {
+            "programName": "strin",
+            "tierLevel": "strin"
+          }
+        ],
+        "qualifier": {
+          "dominance": "string",
+          "tier": "string"
+        }
+      },
+      "frequentTraveller": {
+        "membershipId": "string",
+        "programId": "str"
+      },
+      "deleteUserProfile": false,
+      "isPrimaryGuest": false,
+      "age": 0
+    }
+  ],
+  "replaceUserProfiles": false,
+  "hotels": [
+    {
+      "hotelMnemonic": "string",
+      "distributionInfo": {
+        "chainCode": "string",
+        "cityCode": "string",
+        "externalHotelCode": "string"
+      }
+    }
+  ]
+}
