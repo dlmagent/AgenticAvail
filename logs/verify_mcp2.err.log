@@ -1,0 +1,8 @@
+[04/17/26 13:48:32] INFO     StreamableHTTP      streamable_http_manager.py:110
+                             session manager                                   
+                             started                                           
+[04/17/26 13:48:36] INFO     Terminating session: None   streamable_http.py:630
+                    INFO     Terminating session: None   streamable_http.py:630
+                    INFO     Processing request of type           server.py:624
+                             ListToolsRequest                                  
+                    INFO     Terminating session: None   streamable_http.py:630
